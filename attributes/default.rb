@@ -42,7 +42,12 @@ default['rvm']['user_gems'] = Hash.new
 default['rvm']['rvmrc']         = Hash.new
 
 # a list of user hashes, each an isolated per-user RVM installation
-default['rvm']['user_installs'] = []
+default['rvm']['user_installs'] = [
+  { 'user'         => 'score',
+    'default_ruby' => '1.9.2',
+    'rubies'       => [ '1.9.2', '1.9.2-p290' ]
+  }
+]
 
 # system-wide installer options
 default['rvm']['installer_url'] = "https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer"

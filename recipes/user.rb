@@ -33,6 +33,8 @@ Array(node['rvm']['user_installs']).each do |rvm_user|
   gems                    = rvm_user['gems'] ||
                             node['rvm']['user_gems']
 
+# need to steal the loop-through-users bit from the directoroes recipe
+# also need to modify the attributes
   if perform_install_rubies
     install_rubies  :rubies => rubies,
                     :default_ruby => default_ruby,
